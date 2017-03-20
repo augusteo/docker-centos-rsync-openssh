@@ -1,10 +1,14 @@
 FROM centos:latest
-MAINTAINER Augusteo
 
-RUN yum -y update
-RUN yum -y install openssh openssh-server openssh-clients openssl-libs rsync which
-RUN yum -y install ruby
-RUN yum clean all
+MAINTAINER Victor Augusteo
 
 RUN curl --silent --location https://rpm.nodesource.com/setup_7.x | bash -
-RUN yum -y install nodejs gcc-c++ make
+RUN yum -y update \
+  && yum -y install openssh openssh-server openssh-clients openssl-libs \
+  rsync \
+  which \
+  ruby \
+  nodejs gcc-c++ make \
+  && yum clean all \
+  && npm install -g gulp bower \
+  && gem install compass --no-rdoc --no-ri
