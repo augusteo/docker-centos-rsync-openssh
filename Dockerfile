@@ -9,7 +9,7 @@ RUN yum -y update \
   which \
   ruby \
   nodejs gcc-c++ make \
-  gcc ruby-devel rubygems
+  gcc ruby-devel rubygems \
   && yum clean all
 RUN npm install -g gulp bower
 RUN gem install compass --no-rdoc --no-ri
