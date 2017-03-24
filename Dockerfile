@@ -11,3 +11,4 @@ RUN yum -y update \
   gcc \
   && yum clean all
 RUN npm install -g node-sass
+RUN wget https://dl.yarnpkg.com/rpm/yarn.repo -O /etc/yum.repos.d/yarn.repo
