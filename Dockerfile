@@ -7,9 +7,7 @@ RUN yum -y update \
   && yum -y install openssh openssh-server openssh-clients openssl-libs \
   rsync \
   which \
-  ruby \
   nodejs gcc-c++ make \
-  gcc ruby-devel rubygems \
+  gcc \
   && yum clean all
-RUN npm install -g gulp bower
-RUN gem install compass --no-rdoc --no-ri
+RUN npm install -g node-sass
